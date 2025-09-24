@@ -6,3 +6,4 @@ Equality of relations → funext + propext (requires Classical)
 Invariant proof: use System.invariant_induction (init, step)
 BFS fuel = scope.maxStates; depth cap via node.depth
 List.length simp: subst states then simp [atMostOne]
+LeadsTo lemmas: refl/trans via Temporal.LeadsTo

@@ -65,9 +65,10 @@
   - Docs: update `docs/capabilities/mutex.md` with proof outline and CE trace example
 
 ## Backlog — Milestone 2 (Temporal + WF/SF)
-- [ ] Task 2.1: Implement temporal operators and WF/SF kernels
+- [x] Task 2.1: Implement temporal operators and WF/SF kernels
   - Implementation: complete `Dsl/Temporal.lean` and `Dsl/Liveness.lean` with core lemmas.
-  - Tests: unit tests for temporal algebra properties.
+  - Tests: unit tests for temporal algebra properties
+  - Notes: Temporal/liveness helpers covered by `LeanSpec.Dsl.TemporalTest` and `LeanSpec.Dsl.LivenessTest`; WF/SF stubs remain minimal.
   - Proofs: prove `leads_to` transitivity and WF/SF introduction lemmas.
   - Docs: extend temporal semantics doc in `docs/capabilities/temporal.md`
 - [ ] Task 2.2: Add liveness proof for Queue example
