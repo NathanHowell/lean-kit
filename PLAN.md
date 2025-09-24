@@ -71,9 +71,10 @@
   - Notes: Temporal/liveness helpers covered by `LeanSpec.Dsl.TemporalTest` and `LeanSpec.Dsl.LivenessTest`; WF/SF stubs remain minimal.
   - Proofs: prove `leads_to` transitivity and WF/SF introduction lemmas.
   - Docs: extend temporal semantics doc in `docs/capabilities/temporal.md`
-- [ ] Task 2.2: Add liveness proof for Queue example
+- [x] Task 2.2: Add liveness proof for Queue example
   - Implementation: fill `Spec/Examples/Queue.lean` with liveness obligations.
   - Tests: `lake run spec --cap queue`
+  - Notes: Queue liveness proved via `dequeue_eventually_empty`; explorer hooks pending.
   - Proofs: leads-to theorem for queue progress.
   - Docs: document scenario and proof in `docs/capabilities/queue.md`
 - [ ] Task 2.3: Integrate explorer lasso detection for liveness CEs
