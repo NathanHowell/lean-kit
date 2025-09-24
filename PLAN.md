@@ -1,7 +1,7 @@
 # PLAN
 
 ## Iteration 0 — Bootstrapping (M0)
-- [ ] Task 0.1: Pin Lean toolchain and scaffold Lake package skeleton
+- [x] Task 0.1: Pin Lean toolchain and scaffold Lake package skeleton
   - Implementation: add `lean-toolchain`, `lakefile.lean`, base `lakefile.toml`/`leanpkg.toml`, and create empty module placeholders under `lean-spec/`.
   - Tests: `lake build`
   - Proofs: n/a (no obligations defined yet)

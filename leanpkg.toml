@@ -1,0 +1,5 @@
+[package]
+name = "lean-kit"
+version = "0.1.0"
+lean_version = "leanprover/lean4:v4.9.0"
+path = "lean-spec"
