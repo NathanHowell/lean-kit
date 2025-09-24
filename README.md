@@ -11,6 +11,7 @@ This repository hosts a Lean 4 native Spec-Driven Development toolkit.
 
 - `lean-spec/` — Lean sources for the DSL, CLI, specs, and adapters.
 - `docs/` — Human-facing documentation (to be populated in later iterations).
+- `memories/` — Ultra-compact tool notes (`memories/LEAN`, `memories/LAKE`, …).
 - `PLAN.md` — Living plan with milestone-scoped tasks and status.
 - `AGENTS.md` — Responsibilities and hand-offs for each project agent.
 

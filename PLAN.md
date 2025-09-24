@@ -1,6 +1,6 @@
 # PLAN
 
-**Process**: After checking off any task, immediately create a dedicated git commit for that task before continuing.
+**Process**: After checking off any task, immediately create a dedicated git commit for that task before continuing; capture fresh tool knowledge under `memories/<TOOL>` before moving on.
 
 ## Iteration 0 — Bootstrapping (M0)
 - [x] Task 0.1: Pin Lean toolchain and scaffold Lake package skeleton
@@ -25,6 +25,12 @@
   - Tests: `act -j spec` (or CI dry run if local `act` unavailable)
   - Proofs: n/a (automation pipeline)
   - Docs: record CI behaviour in `docs/plan/ci.md`
+
+- [x] Task 0.5: Establish Lean memory log
+  - Implementation: create `memories/LEAN` and seed it with current Lean insights.
+  - Tests: `ls memories/LEAN`
+  - Proofs: n/a (reference notes only)
+  - Docs: document the memory workflow in `README.md` and `PLAN.md`
 
 ## Backlog — Milestone 1 (Kernel + Explorer MVP)
 - [ ] Task 1.1: Implement `Dsl/Core.lean` primitives for stores, traces, and runs
