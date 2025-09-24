@@ -1,0 +1,2 @@
+elan-install: curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y --default-toolchain <toolchain>; append ~/.elan/bin to GITHUB_PATH
+cache key: hashFiles('lakefile.lean','leanpkg.toml','lean-spec/**/*.lean') for Lake artefacts

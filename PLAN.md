@@ -20,11 +20,12 @@
   - Proofs: n/a (generated spec contains stubs only)
   - Docs: update `docs/plan/mutex.md` with generated obligations list
   - Notes: `lake run initSpec` uses Lake script naming (colon not supported); CLI still exposes `init:spec` for consistency.
-- [ ] Task 0.4: Configure CI workflow skeleton
+- [x] Task 0.4: Configure CI workflow skeleton
   - Implementation: add `.github/workflows/lean-sdd.yml` with SPEC/PLAN/IMPLEMENT jobs wiring commands.
   - Tests: `act -j spec` (or CI dry run if local `act` unavailable)
   - Proofs: n/a (automation pipeline)
   - Docs: record CI behaviour in `docs/plan/ci.md`
+  - Notes: `act` not executed yet; workflow verified via configuration review only.
 
 - [x] Task 0.5: Establish Lean memory log
   - Implementation: create `memories/LEAN` and seed it with current Lean insights.

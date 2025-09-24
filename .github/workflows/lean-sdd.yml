@@ -1,0 +1,86 @@
+name: Lean SDD Gates
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request: {}
+
+env:
+  LEAN_TOOLCHAIN: leanprover/lean4:v4.9.0
+
+jobs:
+  spec:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Lean toolchain (elan)
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf \
+            | sh -s -- -y --default-toolchain ${LEAN_TOOLCHAIN}
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Cache Lake artifacts
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.elan
+            .lake
+            lake-manifest.json
+          key: ${{ runner.os }}-lean-${{ env.LEAN_TOOLCHAIN }}-${{ hashFiles('lakefile.lean', 'leanpkg.toml', 'lean-spec/**/*.lean') }}
+
+      - name: SPEC gate
+        run: lake build
+
+  plan:
+    runs-on: ubuntu-latest
+    needs: spec
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Lean toolchain (elan)
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf \
+            | sh -s -- -y --default-toolchain ${LEAN_TOOLCHAIN}
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Cache Lake artifacts
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.elan
+            .lake
+            lake-manifest.json
+          key: ${{ runner.os }}-lean-${{ env.LEAN_TOOLCHAIN }}-${{ hashFiles('lakefile.lean', 'leanpkg.toml', 'lean-spec/**/*.lean') }}
+
+      - name: PLAN gate (placeholder)
+        run: lake exe cli -- plan
+
+  implement:
+    runs-on: ubuntu-latest
+    needs: plan
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Lean toolchain (elan)
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf \
+            | sh -s -- -y --default-toolchain ${LEAN_TOOLCHAIN}
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Cache Lake artifacts
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.elan
+            .lake
+            lake-manifest.json
+          key: ${{ runner.os }}-lean-${{ env.LEAN_TOOLCHAIN }}-${{ hashFiles('lakefile.lean', 'leanpkg.toml', 'lean-spec/**/*.lean') }}
+
+      - name: IMPLEMENT gate (placeholder)
+        run: lake exe cli -- implement
