@@ -4,3 +4,4 @@ use System.FilePath.pathExists (not IO.FS.pathExists)
 Nat.bodd_succ ⇒ toggling proof for boolean parity
 Equality of relations → funext + propext (requires Classical)
 Invariant proof: use System.invariant_induction (init, step)
+BFS fuel = scope.maxStates; depth cap via node.depth

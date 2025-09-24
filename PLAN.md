@@ -52,9 +52,9 @@
   - Notes: Verified by `LeanSpec.Dsl.InvariantsTest`; tactic emits base/step obligations only.
   - Proofs: prove soundness lemmas for invariant helpers.
   - Docs: write how-to in `docs/capabilities/invariants.md`
-- [ ] Task 1.4: Implement explorer BFS with symmetry reduction
+- [x] Task 1.4: Implement explorer BFS with symmetry reduction
   - Implementation: fill `Explorer/Scope.lean`, `Explorer/Search.lean`, and `Explorer/Hashing.lean` skeletons.
-  - Tests: unit tests for BFS expansions and hashing determinism.
+  - Tests: unit tests for BFS expansions and hashing determinism\n  - Notes: Verified via `LeanSpec.Dsl.Explorer.SearchTest`; symmetry handled by canonical mapping.
   - Proofs: prove soundness of symmetry reduction assumptions.
   - Docs: document explorer usage in `docs/models/README.md`
 - [ ] Task 1.5: Complete Mutex safety example
