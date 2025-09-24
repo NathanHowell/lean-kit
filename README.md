@@ -16,3 +16,6 @@ This repository hosts a Lean 4 native Spec-Driven Development toolkit.
 
 Refer to `INSTRUCTIONS.md` for the long-form product blueprint.
 
+## CLI
+
+Use `lake exe cli -- help` (or `lake run cli help`) to see available commands. The `spec`, `plan`, and `implement` subcommands are placeholders that will be fleshed out as the toolkit matures.

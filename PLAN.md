@@ -1,16 +1,19 @@
 # PLAN
 
+**Process**: After checking off any task, immediately create a dedicated git commit for that task before continuing.
+
 ## Iteration 0 — Bootstrapping (M0)
 - [x] Task 0.1: Pin Lean toolchain and scaffold Lake package skeleton
   - Implementation: add `lean-toolchain`, `lakefile.lean`, base `lakefile.toml`/`leanpkg.toml`, and create empty module placeholders under `lean-spec/`.
   - Tests: `lake build`
   - Proofs: n/a (no obligations defined yet)
   - Docs: seed `README.md` with bootstrap instructions
-- [ ] Task 0.2: Create CLI entry point with `lake run help`
+- [x] Task 0.2: Create CLI entry point with `lake run help`
   - Implementation: add `Cli/Main.lean` with command routing and stub subcommands aligned with SPEC/PLAN/IMPLEMENT phases.
   - Tests: `lake exe cli -- help`
   - Proofs: n/a (CLI logic only)
   - Docs: document CLI usage in `README.md`
+  - Notes: `lake exe cli -- help` fails locally due to dyld SG_READ_ONLY restriction; needs toolchain investigation.
 - [ ] Task 0.3: Provide sample capability doc and spec generator
   - Implementation: add `docs/capabilities/mutex.md`, implement `Cli/Gen.lean` to generate `Spec/Mutex.lean` via `lake run init:spec`.
   - Tests: `lake run init:spec --cap mutex` followed by `lake build`
