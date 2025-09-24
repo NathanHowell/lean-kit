@@ -46,9 +46,10 @@
   - Notes: Verified via `LeanSpec.Dsl.ActionsTest` (no CLI integration yet).
   - Proofs: prove associativity/identity lemmas in Lean.
   - Docs: update action catalogue reference in `docs/capabilities/actions.md`
-- [ ] Task 1.3: Build invariant automation helpers
+- [x] Task 1.3: Build invariant automation helpers
   - Implementation: implement `Dsl/Invariants.lean` with `inv_auto` tactic and invariant combinators.
-  - Tests: tactic-level regression tests via `.extra` tests.
+  - Tests: tactic-level regression tests via `.extra` tests
+  - Notes: Verified by `LeanSpec.Dsl.InvariantsTest`; tactic emits base/step obligations only.
   - Proofs: prove soundness lemmas for invariant helpers.
   - Docs: write how-to in `docs/capabilities/invariants.md`
 - [ ] Task 1.4: Implement explorer BFS with symmetry reduction
