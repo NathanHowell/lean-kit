@@ -14,11 +14,12 @@
   - Proofs: n/a (CLI logic only)
   - Docs: document CLI usage in `README.md`
   - Notes: `lake exe cli -- help` fails locally due to dyld SG_READ_ONLY restriction; needs toolchain investigation.
-- [ ] Task 0.3: Provide sample capability doc and spec generator
-  - Implementation: add `docs/capabilities/mutex.md`, implement `Cli/Gen.lean` to generate `Spec/Mutex.lean` via `lake run init:spec`.
-  - Tests: `lake run init:spec --cap mutex` followed by `lake build`
+- [x] Task 0.3: Provide sample capability doc and spec generator
+  - Implementation: add `docs/capabilities/mutex.md`, implement `Cli/Gen.lean` to generate `Spec/Mutex.lean` via `lake run initSpec`.
+  - Tests: `lake run initSpec --cap mutex` followed by `lake build`
   - Proofs: n/a (generated spec contains stubs only)
   - Docs: update `docs/plan/mutex.md` with generated obligations list
+  - Notes: `lake run initSpec` uses Lake script naming (colon not supported); CLI still exposes `init:spec` for consistency.
 - [ ] Task 0.4: Configure CI workflow skeleton
   - Implementation: add `.github/workflows/lean-sdd.yml` with SPEC/PLAN/IMPLEMENT jobs wiring commands.
   - Tests: `act -j spec` (or CI dry run if local `act` unavailable)

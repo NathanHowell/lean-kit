@@ -1,4 +1,5 @@
 import Lean
+import LeanSpec.Cli.Gen
 
 namespace LeanSpec
 namespace Cli
@@ -8,9 +9,10 @@ private def helpLines : List String :=
   , ""
   , "Commands:"
   , "  help              Display this help message"
-  , "  spec              Run specification-phase tasks (stub)"
-  , "  plan              Run plan-phase tasks (stub)"
-  , "  implement         Run implementation-phase tasks (stub)"
+  , "  init:spec         Generate a spec stub (use `--cap <name>`)."
+  , "  spec              Run specification-phase tasks (stub)."
+  , "  plan              Run plan-phase tasks (stub)."
+  , "  implement         Run implementation-phase tasks (stub)."
   ]
 
 private def helpText : String :=
@@ -19,17 +21,24 @@ private def helpText : String :=
 
 private def unknownCmd (cmd : String) : String :=
   s!"Unknown command: {cmd}
-Use `lake run cli help` for usage."
+Use `lake run cli -- help` for usage."
+
+private def normalizeArgs : List String → List String
+  | [] => []
+  | "--" :: rest => rest
+  | args => args
 
 private def runCommand : List String → IO UInt32
   | [] => do
       IO.println helpText
       pure 0
-  | cmd :: _ =>
+  | cmd :: rest =>
       match cmd with
       | "help" | "--help" | "-h" => do
           IO.println helpText
           pure 0
+      | "init:spec" =>
+          Gen.runInitSpec rest
       | "spec" => do
           IO.println "[stub] SPEC gate commands will live here."
           pure 0
@@ -45,7 +54,7 @@ private def runCommand : List String → IO UInt32
 
 /-- Entry point for `lake exe cli` and `lake run cli`. -/
 def main (args : List String) : IO UInt32 :=
-  runCommand args
+  runCommand (normalizeArgs args)
 
 end Cli
 end LeanSpec

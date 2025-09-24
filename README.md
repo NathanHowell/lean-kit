@@ -18,4 +18,6 @@ Refer to `INSTRUCTIONS.md` for the long-form product blueprint.
 
 ## CLI
 
-Use `lake exe cli -- help` (or `lake run cli help`) to see available commands. The `spec`, `plan`, and `implement` subcommands are placeholders that will be fleshed out as the toolkit matures.
+- `lake exe cli -- help` (or `lake run cli -- help`) lists available commands. The `spec`, `plan`, and `implement` subcommands remain stubs.
+- `lake exe cli -- init:spec --cap <name>` invokes the generator directly (may require unsandboxed execution on macOS).
+- `lake run initSpec --cap <name>` uses the Lake script wrapper to generate Lean spec and plan stubs without launching an external binary.
