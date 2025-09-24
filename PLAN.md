@@ -34,11 +34,12 @@
   - Docs: document the memory workflow in `README.md` and `PLAN.md`
 
 ## Backlog — Milestone 1 (Kernel + Explorer MVP)
-- [ ] Task 1.1: Implement `Dsl/Core.lean` primitives for stores, traces, and runs
+- [x] Task 1.1: Implement `Dsl/Core.lean` primitives for stores, traces, and runs
   - Implementation: encode store type, Init/Next signatures, run semantics, temporal operators skeleton.
   - Tests: `lake build`, unit tests in `Dsl/CoreTest.lean`
   - Proofs: prove well-typedness lemmas for Init/Next composition
   - Docs: explain core semantics in `docs/capabilities/semantics.md`
+  - Notes: Tests rely on `LeanSpec.Dsl.CoreTest` toggle execution; `lake exe cli -- plan` remains stub.
 - [ ] Task 1.2: Implement action constructors and composition rules
   - Implementation: populate `Dsl/Actions.lean` and `Dsl/Composition.lean` with constructors and helper lemmas.
   - Tests: unit tests covering action evaluation and composition identities.
