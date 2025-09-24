@@ -2,3 +2,4 @@ s! multiline ⇒ build List String ▷ String.intercalate "\n"
 FilePath.parent : Option → match before createDirAll
 use System.FilePath.pathExists (not IO.FS.pathExists)
 Nat.bodd_succ ⇒ toggling proof for boolean parity
+Equality of relations → funext + propext (requires Classical)
