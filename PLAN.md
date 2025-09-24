@@ -57,9 +57,10 @@
   - Tests: unit tests for BFS expansions and hashing determinism\n  - Notes: Verified via `LeanSpec.Dsl.Explorer.SearchTest`; symmetry handled by canonical mapping.
   - Proofs: prove soundness of symmetry reduction assumptions.
   - Docs: document explorer usage in `docs/models/README.md`
-- [ ] Task 1.5: Complete Mutex safety example
+- [x] Task 1.5: Complete Mutex safety example
   - Implementation: finish `Spec/Examples/Mutex.lean` with invariant proofs and bounded explorer integration.
   - Tests: `lake run spec --cap mutex`
+  - Notes: Safety proved in `LeanSpec.Spec.Examples.Mutex.safety`; explorer goal for double-holder remains unreachable.
   - Proofs: safety invariant theorem for Mutex spec
   - Docs: update `docs/capabilities/mutex.md` with proof outline and CE trace example
 

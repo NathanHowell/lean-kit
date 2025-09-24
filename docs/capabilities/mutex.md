@@ -38,3 +38,11 @@ requests, and (3) guaranteeing that a holder eventually releases the lock.
 
 This document seeds the automatic spec generator; additional structure (e.g., state
 variables or temporal properties) will be refined in later iterations.
+
+# Specification
+
+- Store: `List Nat` capturing the active holders (length ≤ 1 invariant).
+- Labels: `acquire n` and `release n`.
+- `Next`: acquiring when free installs `[n]`; releases clear the holder; conflicting requests stutter.
+
+The proof `LeanSpec.Spec.Examples.Mutex.safety` certifies the length invariant using `inv_auto`.
